@@ -1,165 +1,879 @@
 <!DOCTYPE html>
-<title>Mathematische Einf&uuml;hrung in Data Science</title>
+<title>PD Dr. habil. Sven-Ake Wegner</title>
 <html>
 <head>
 	
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="site.webmanifest">
+<meta name="google-site-verification" content="T5kXzOeDGVL34ysp6Wj4-hrkLVl0PYag4ozgrfHtniA" />
+	
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 <style>
 	
 	/*html{background-color: #262626;}*/
 	
-	h1 { margin-bottom:0px;margin-top:5px;  } /*font-size: 35px; */
+	h1 { margin-bottom:5px;margin-top:55px;  } /*font-size: 35px; */
 	h2 {margin-bottom:5px;margin-top:10px;  }/* font-size: 16px;*/
-	h3 { margin-bottom:12px;margin-top:5px;  }
+	h3 { margin-bottom:12px;  }
 	
-	body { font: 16px Helvetica, sans-serif; color: #FFF01F;}
-	article {display: block; text-align: left; width: 820px; margin: 40px;}
+	body { font: 16px Helvetica, sans-serif; color: #333; background-color: #FFFFFF;}
+	article { display: block; text-align: left; width: 900px; margin: 0 auto; background-color: #FFFFFF;}
 	a { color: #0000EE; text-decoration: none; }
 	a:hover { color: #333; text-decoration: none; }
 	
-	
 	html,body {
-		background-color: #000000;
-	    height: 100%;
-	    margin: 0;
 	  text-size-adjust: none;
 	  -webkit-text-size-adjust: none;
 	  -moz-text-size-adjust: none;
 	  -ms-text-size-adjust: none;
 	}
 
-	.center {
-	background-color: rgba(0,0,0,0.35);
-	border-radius: 20px;
-	  border: none;
-	  position: absolute;
-	  top: 360px;
-	  left: 50%;
-	  transform: translate(-50%, -50%);
-	  padding: 10px;
-	}
-
-	
-	.bgimg {
-	    background-position: center center;
-	    background-attachment: fixed;
-	    position: absolute;
-	    width: 100%;
-	    height: 100%;
-	    top: 0;
-	    left: 0;
-	    bottom: 0;
-	    right: 0;
-	    border: 0;
-	    background: url("Board.jpg") repeat;
-	    background-size: cover !important;
-	    -webkit-background-size: cover !important;
-	    -moz-background-size: cover !important;
-	}
-	
-
-
+* {
+    box-sizing: border-box;
+}
 /* Create two equal columns that floats next to each other */
 .columnl {
-	opacity: 1;
 	text-align: left;
   float: left;
-  width: 70%;
+  width: 40%;
   padding: 00px;
 }
 
 .columnr {
-	opacity: 1;
   float: right;
-  width: 30%;
-  margin-top:5px;
-  margin-bottom:15px;
-  text-align: center;
+  width: 60%;
+  margin-top:50px;
+  text-align: right;
   padding: 0px;
 }
 
-.bottoms {
-	opacity: 1;
-  float: center;
-  width: 800px;
-  margin-top:5px;
-  margin-bottom:15px;
-  text-align: left;
-  padding: 0px;
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.image1 {
-  margin-bottom:70px;
-}
+
 
 </style>
 </head>
 
 
 
-<div class="bgimg">
 
-<div class="center">
 <article>
-
   <div class="row">
     <div class="columnl" >
       
 	  
 	  
 	  
-<h1> Mathematische Einf&uuml;hrung in Data Science</h1>
-<h3>von Sven-Ake Wegner</h3>
+	  <table style="width:100%">
+    		<tr>
+    	    <td style="text-align:left" width="140px"><h1>PD Dr. habil. Sven-Ake Wegner</h1></td>
+    	  </tr>
+	</table>	  
 
-<p>Dieses Manuskript basiert auf mehreren Vorlesungen zu den Themen <i>Data Science</i> und <i>Machine Learning</i> die ich in den letzten Jahren gehalten habe.</p>
+	<table style="width:100%">
+               <tr>
+	    	    <td style="text-align:left" width="140px">Department of Mathematics</td>
+	    	  </tr>
+			  <!--<tr height="7px"></tr>-->
+			  		  
+	    		<tr>
+	    	    <td style="text-align:left" width="140px">University of Hamburg</td>
+	    	  </tr>
+			  			  
+	    		<tr>
+	    	    <td style="text-align:left" width="140px">Bundesstra&szlig;e 55</td>
+	    	  </tr>
+	    		<tr>
+	    	    <td style="text-align:left" width="140px">20146 Hamburg</td>
+	    	  </tr>
+	    		<tr>
+	    	    <td style="text-align:left" width="140px">Germany</td>
+	    	  </tr>
 
-
-<p>Es richtet sich prim&auml;r an Studierende der Mathematik ab dem Ende des Bachelorstudiums und setzt die Grundvorlesungen &uuml;ber Analysis, Ma&szlig;theorie, Lineare Algebra und Wahrscheinlichkeitstheorie voraus. Einige Kapitel erfordern dar&uuml;ber hinaus Kenntnisse in Optimierung und Funktionalanalysis.</p>
-
-<p>Behandelte Themen sind u.a.:</p>
-
-<ul style="margin-bottom: 1.5em;margin-top: 0em; list-style-type:square">
-<li style="padding:0.2em 0.1em">Lineare und logistische Regression</li>
-<li style="padding:0.2em 0.1em"><i>k</i>-n&auml;chste Nachbarn und Kosinus&auml;hnlichkeit</li>
-<li style="padding:0.2em 0.1em">Dimensionalit&auml;tsreduktion per Johnson-Lindenstrauss</li>
-<li style="padding:0.2em 0.1em">(Graphen-)Clustering</li>
-<li style="padding:0.2em 0.1em">Perzeptron und Support Vector Machines</li>
-<li style="padding:0.2em 0.1em">Hauptkomponentenanalyse per Singul&auml;rwertzerlegung</li>
-<li style="padding:0.2em 0.1em">Kollaboratives Filtern</li>
-<li style="padding:0.2em 0.1em">Neuronale Netze</li>
-</ul>
-
-<p>Kommentare an datasciencebuch@gmail.com sind sehr willkommen!</p>
-
-<div class="bottoms">
-
-  <small>Diese Website verwendet Cookies. Wenn Sie diese Website nutzen, ohne die Cookie-Einstellungen Ihres Browsers zu &auml;ndern, stimmen Sie der Verwendung von Cookies zu. Bei Fragen, kontaktieren Sie: datasciencebuch@gmail.com.</small>
-    </div>
+	  <tr height="7px"></tr>
+	  
+  	    		<tr>
+  	    	    <td style="text-align:left" width="140px">Email: sven dot wegner at uni-hamburg dot de</td>
+  	    	  </tr>
+  	    		<tr>
+  	    	    <td style="text-align:left" width="140px">Phone: +49 40 42838 5120</td>
+  	    	  </tr>
+  	    		<tr>
+  	    	    <td style="text-align:left" width="140px">Office: 104</td>
+  	    	  </tr>
+			  
+	<tr height="15px"></tr>
 	
+	
+	
+	<tr>		    
+	 <td style="text-align:left" width="150px"> <a itemprop="sameAs" content="https://orcid.org/0000-0001-8704-3182" href="https://orcid.org/0000-0001-8704-3182"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">ORCID: 0000-0001-8704-3182</a>  </td>
+	 </tr>
+	 <tr>
+	 <td style="text-align:left" width="150px"> <a href="https://scholar.google.de/citations?user=s9sOR1kAAAAJ&hl=de"><img src="GS.png" style="width:1em;margin-right:.5em;">Google Scholar Profile</a>  </td>
+	 
+	    	  </tr>  
+		 	 <tr>
+		 	 <td style="text-align:left" width="150px"> <a href="https://www.webofscience.com/wos/author/record/1381679"><img src="PUB.png" style="width:1em;margin-right:.5em;margin-top:0.1em">Web of Science</a>  </td>
+	 
+		 	    	  </tr>
+			  
+	<table style="width:100%">
+	
+			  
+			</table>		  
+			  
+			  
+
+
+
+
     </div>
 	
 
     <div class="columnr" >
-      <a href="Mathematische-Einfuehrung-in-Data-Science-Sven-Ake-Wegner-2023-10-11.pdf"><img class="image1" src="Cover.jpg" height="280" width="200", opacity:1></a>
+      <img src="Sven-Ake-Wegner.jpg" height="330" width="431">
     </div>
   </div>
+
+<hr />
+
+<div>
+<h3>Research Interests</h3>
+
+<ul style="margin-bottom: 1.5em;margin-top: 0em; list-style-type:square">
+<li style="padding:0.2em 0.1em">Operator Semigroups and Evolution Equations</li>
+<li style="padding:0.2em 0.1em">Homological Algebra in the context of Functional Analysis</li>
+<li style="padding:0.2em 0.1em">Mathematical Principles of Data Science</li>
+</ul>
+
+
+<hr />
+
+
+<h3>Upcoming Events</h3>
+
+<ul style="margin-bottom: 1.5em;margin-top: 0em; list-style-type:square">
+
+<li style="padding:0.2em 0.1em"><a href="https://www.jointmathematicsmeetings.org/">Joint Mathematics Meeting (JMM)</a>, San Francisco, U.S.A. (03-06/01/2024)</li>
+
+<li style="padding:0.2em 0.1em"><a href="https://www.mat.tuhh.de/gamm-ot/index.html">Workshop des GAMM Fachausschusses Angewandte Operatortheorie</a>, TUHH, Germany (22-24/05/2024)</li>
+
+<li style="padding:0.2em 0.1em"><a href="https://icra21.sjtu.edu.cn">21st International Conference on Representations of Algebras (ICRA)</a>, Shanghai, China (05-09/08/2024)</li>
+
+
+
+
+
+</ul>
+
+
+
+
+
+<hr />
+
+
+  </div>
+
+
+
+  <div>	
+	<p><h3>Curriculum Vitae</h3>
+	
+
+	
+  	<table style="width:100%">
+  		<tr>
+  	    <td style="text-align:right"  valign="top" font size="20px">since 10/2020</td>
+		<td  width="10px"></td>
+  	    <td> Tenured Research Fellow in Mathematics, University of Hamburg, Germany </td> 
+  	  </tr>
+	  
+	  <tr height="0px"></tr>
+
+<!--
+  		<tr>
+  	    <td style="text-align:right"  valign="top"> 08/2022</td>
+		<td  width="10px"></td>
+  	    <td> Offer of a W2-Professorship (declined), Hochschule Zittau-G&ouml;rlitz, Germany</td> 
+  	  </tr>
+	  <tr height="0px"></tr>
+		
+		
+-->
+
+  		<tr>
+  	    <td style="text-align:right"  valign="top"> 07/2020</td>
+		<td  width="10px"></td>
+  	    <td> Habilitation in Mathematics with Birgit Jacob, University of Wuppertal, Germany</td> 
+  	  </tr>
+	  <tr height="0px"></tr>
+
+  		<tr>
+  	    <td style="text-align:right"  valign="top"> 07-09/2019</td>
+		<td  width="10px"></td>
+  	    <td> Invited Researcher at IHES, Paris, France</td> 
+  	  </tr>
+	  <tr height="0px"></tr>
+	  
+		<tr>
+	    <td style="text-align:right"  valign="top"> 01/2018-09/2020</td>
+	<td  width="10px"></td>
+	    <td>Senior Lecturer in Mathematics, Teesside University, Middlesbrough, UK </td> 
+	  </tr>  
+	  <tr height="0px"></tr>
+
+		<tr>
+	    <td style="text-align:right"  valign="top">08/2015-07/2016 </td>
+	<td  width="10px"></td>
+	    <td>Assistant Professor, Nazarbayev University, Astana, Kazakhstan </td> 
+	  </tr>  
+	  
+	  <tr height="0px"></tr>
+	  
+  		<tr>
+  	    <td style="text-align:right"  valign="top"> 09-10/2014 </td>
+  	<td  width="10px"></td>
+  	    <td>ERASMUS+ Fellow at the Adam Mickiewicz University, Pozna&#324;, Poland</td> 
+  	  </tr>
+	  
+	  <tr height="0px"></tr>
+	  
+  		<tr>
+  	    <td style="text-align:right"  valign="top">09/2013-03/2014 </td>
+  	<td  width="10px"></td>
+  	    <td> DAAD Fellow at the Sobolev Institute of Mathematics, Novosibirsk, Russia</td> 
+  	  </tr>
+	  
+	  <tr height="0px"></tr>
+	  
+  		<tr>
+  	    <td style="text-align:right"  valign="top"> 10/2010-01/2018</td>
+  	<td  width="10px"></td>
+  	    <td>Research Associate with Birgit Jacob (temporarily on leave), University of Wuppertal, Germany  </td> 
+  	  </tr>
+	  <tr height="0px"></tr>
+	    
+  		<tr>
+  	    <td style="text-align:right"  valign="top"> 06/2010 </td>
+  	<td  width="10px"></td>
+  	    <td>PhD in Mathematics with Jos&eacute; Bonet, Polytechnic University of Valencia, Spain </td> 
+  	  </tr>
+	  <tr height="0px"></tr>
+	  
+  		<tr>
+  	    <td style="text-align:right"  valign="top">04/2007-09/2010 </td>
+  	<td  width="10px"></td>
+  	    <td> Research Assistant with Helge Gl&ouml;ckner and Klaus D. Bierstedt, University of Paderborn, Germany</td> 
+  	  </tr>	  
+		    
+	  <tr height="0px"></tr>
+		<tr>
+		<td style="text-align:right"  valign="top">03/2007 </td>
+    <td  width="10px"></td>
+	    <td> MSc in Mathematics with Klaus D. Bierstedt, University of Paderborn, Germany</td> 
+		  	  </tr>
+  	</table>
+	
+	</p>
+ 
+  <hr />
+  
+  </div>
+
+
+
+  <div>	
+	  
+	  
+	  
+	  
+	
+<h3>Preprints</h3>
+
+
+
+  <table style="width:100%">
+
+          <tr><td style="text-align:right" width="40px">32.</td><td  width="5px"></td>
+       	   <td>S.-A. Wegner (2023) </td></tr><tr><td></td><td  width="5px"></td>
+     		<td><strong>Mathematische Einf&uuml;hrung in Data Science</strong> </td> 
+       	  </tr>
+       <tr><td ></td><td  width="5px"></td>
+     	         <td>Book manuscript, 269 pages, <a href="https://mathematicaldatascience.github.io/Mathematische-Einfuehrung-in-Data-Science-Sven-Ake-Wegner-2023-10-11.pdf"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="https://mathematicaldatascience.github.io"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="GITHUB.png" width="42" height="15" /></a></td> 
+     	  </tr>
+   		  		  
+
+  </table>
+  
+	
+	
+	  
+
+<p ><h3>Journal Publications</h3>
+	
+	
+	
+  <table style="width:100%">
+  
+        <tr><td style="text-align:right" width="40px">31.</td><td  width="5px"></td>
+     	   <td>R. Henrard, S. Kvamme, A.-C. van Roosmalen and S.-A. Wegner (2023) </td></tr><tr><td></td><td  width="5px"></td>
+   		<td><strong>The left heart and exact hull of an additive regular category</strong> </td> 
+     	  </tr>
+     <tr><td ></td><td  width="5px"></td>
+   	         <td> Rev. Mat. Iberoam. 39, no. 2, 439-494, DOI 10.4171/RMI/1388  <a href="https://ems.press/journals/rmi/articles/8615951"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="https://arxiv.org/abs/2105.11483"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+   	  </tr>
+ 		  		  
+ 	  <tr height="7px"></tr>
+	 
+	  
+	  
+	  <tr><td style="text-align:right" width="40px">30.</td><td  width="5px"></td>
+	  	       	   <td>M. Lawson and S.-A. Wegner (2023) </td></tr><tr><td></td><td  width="5px"></td>
+	  	     		<td><strong>The category of Silva spaces is not integral</strong> </td> 
+	  	       	  </tr>
+	  	       <tr><td ></td><td  width="5px"></td>
+	  	     	         <td> Homology, Homotopy and Applications 25, no. 1, 367-374, DOI: 10.4310/HHA.2023.v25.n1.a19 <a href="https://www.intlpress.com/site/pub/pages/journals/items/hha/content/vols/0025/0001/a019/index.php?mode=ns
+"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="https://arxiv.org/abs/2107.13901"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+	  	     	  </tr>
+				  
+		  	  <tr height="7px"></tr>
+			  
+	
+	  
+
+	  <tr><td style="text-align:right" width="40px">29.</td><td  width="5px"></td>
+	  	       	   <td>C. Budde and S.-A. Wegner (2022) </td></tr><tr><td></td><td  width="5px"></td>
+	  	     		<td><strong>A Lumer-Phillips type generation theorem for bi-continuous semigroups</strong> </td> 
+	  	       	  </tr>
+	  	       <tr><td ></td><td  width="5px"></td>
+	  	     	         <td> Zeitschrift f&uuml;r Analysis und ihre Anwendungen 41, no. 1-2, 65-80, DOI: 10.4171/ZAA/1695 <a href="https://www.ems-ph.org/journals/of_article.php?jrn=zaa&doi=1695"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="https://arxiv.org/abs/2202.10730"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+	  	     	  </tr>
+				  
+		  	  <tr height="7px"></tr>
+			  
+			  
+			  
+			  	  
+	  
+	  
+	  <tr><td style="text-align:right" width="40px">28.</td><td  width="5px"></td>
+	  	       	   <td>S. Hassoun, A. Shah and S.-A. Wegner (2021) </td></tr><tr><td></td><td  width="5px"></td>
+	  	     		<td><strong>Examples and non-examples of integral categories and the admissible intersection property</strong> </td> 
+	  	       	  </tr>
+	  	       <tr><td ></td><td  width="5px"></td>
+	  	     	         <td>Cahiers Topologie G&eacute;om. Diff&eacute;rentielle Cat&eacute;g. 62, no. 3, 329-354 <a href="http://cahierstgdc.com/wp-content/uploads/2021/07/Hassoun-Shah-Wegner-LXII-3.pdf"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="https://arxiv.org/abs/2005.11309"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+	  	     	  </tr>
+				   
+		  	  <tr height="7px"></tr>
+				
+
+	<tr><td style="text-align:right" width="40px">27.</td><td  width="5px"></td>
+		<td>G. Passias and S.-A. Wegner (2021) </td></tr><tr><td></td><td  width="5px"></td>
+		<td><strong>On a counterexample in connection with the Picard-Lindel&ouml;f Theorem</strong> </td></tr>
+		<tr><td></td><td  width="5px"></td>
+		<td>College Math. J. 52, no. 3, 221-223, DOI:10.1080/07468342.2021.1909978 <a href="https://www.tandfonline.com/doi/full/10.1080/07468342.2021.1909978"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="https://arxiv.org/abs/1801.08134"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="35" height="15"/></a></td></tr>  
+		
+		 <tr height="7px"></tr>
+		 
+
+          <tr><td style="text-align:right" width="40px">26.</td><td  width="5px"></td>
+       	   <td>M. Waurick and S.-A. Wegner (2020) </td></tr><tr><td></td><td  width="5px"></td>
+     		<td><strong>Dissipative extensions and port-Hamiltonian operators on networks</strong> </td> 
+       	  </tr>
+       <tr><td ></td><td  width="5px"></td>
+     	         <td>J. Diff. Equat. 269, no. 9, 6830-6874, DOI: 10.1016/j.jde.2020.05.014 <a href="https://www.sciencedirect.com/science/article/pii/S0022039620302576"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="https://arxiv.org/abs/1905.01117"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+     	  </tr>
+	
+	  <tr height="7px"></tr>
+
+	  
+	  
+       <tr><td style="text-align:right" width="40px">25.</td><td  width="5px"></td>
+    	   <td>B. Jacob and S.-A. Wegner (2019) </td></tr><tr><td></td><td  width="5px"></td>
+			<td><strong>Well-posedness of a class of hyperbolic partial differential equations on the semi-axis</strong> </td> 
+    	  </tr>
+	  <tr><td ></td><td  width="5px"></td>
+  	         <td> J. Evol. Equat. 19, no. 4, 1111-1147, DOI: 10.1007/s00028-019-00507-7 <a href="https://link.springer.com/article/10.1007%2Fs00028-019-00507-7"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="https://arxiv.org/abs/1903.11310"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+  	  </tr>
+	  
+	  <tr height="7px"></tr>
+	  
+	  
+	  
+       <tr><td style="text-align:right" width="40px">24.</td><td  width="5px"></td>
+    	   <td>M. Waurick and S.-A. Wegner (2018) </td></tr><tr><td></td><td  width="5px"></td>
+			<td><strong>Some remarks on the notions of boundary systems and boundary triple(t)s</strong> </td> 
+    	  </tr>
+	  <tr><td ></td><td  width="5px"></td>
+  	         <td> Math. Nachr. 291, no. 16, 2489-2497, DOI: 10.1002/mana.201700417 <a href="https://onlinelibrary.wiley.com/doi/10.1002/mana.201700417/pdf"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="https://arxiv.org/abs/1710.10823"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+  	  </tr>
+	  
+	  <tr height="7px"></tr>
+	  
+	  
+	  
+       <tr><td style="text-align:right" width="40px">23.</td><td  width="5px"></td>
+    	   <td>C. Bargetz and S.-A. Wegner (2018) </td></tr><tr><td></td><td  width="5px"></td>
+			<td><strong>Pivot duality of universal interpolation and extrapolation spaces</strong> </td> 
+    	  </tr>
+	  <tr><td ></td><td  width="5px"></td>
+  	         <td> J. Math. Anal. Appl. 460, no. 1, 321-331, DOI: 10.1016/j.jmaa.2017.11.042 <a href="http://www.sciencedirect.com/science/article/pii/S0022247X17310430"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1604.00763"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+  	  </tr>
+	  
+	  
+	  <tr height="7px"></tr>
+	  
+	  
+     <tr><td style="text-align:right" width="40px">22.</td><td  width="5px"></td>
+  	   <td>S.-A. Wegner (2017) </td></tr><tr><td></td><td  width="5px"></td>
+		<td><strong>Boundary triplets for skew-symmetric operators and the generation of strongly continuous semigroups</strong> </td> 
+  	  </tr>
+  <tr><td ></td><td  width="5px"></td>
+	         <td> Analysis Mathematica 43, no. 4, 657-686, DOI: 10.1007/s10476-017-0509-6 <a href="https://link.springer.com/article/10.1007/s10476-017-0509-6"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1611.08867"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+	  </tr>  
+	  
+	  <tr height="7px"></tr>
+	  
+	  
+     <tr><td style="text-align:right" width="40px">21.</td><td  width="5px"></td>
+  	   <td>S.-A. Wegner (2017) </td></tr><tr><td></td><td  width="5px"></td>
+		<td><strong>The heart of the Banach spaces</strong> </td> 
+  	  </tr>
+  <tr><td ></td><td  width="5px"></td>
+	         <td> J. Pure Appl. Algebra, 221, no. 11, 2880-2909, DOI: 10.1016/j.jpaa.2017.02.006 <a href="http://www.sciencedirect.com/science/article/pii/S0022404917300312"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1608.00424"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+	  </tr>  
+	  
+	  
+	  <tr height="7px"></tr>
+	  
+	  
+     <tr><td style="text-align:right" width="40px">20.</td><td  width="5px"></td>
+  	   <td>B. Farkas and S.-A. Wegner (2016) </td></tr><tr><td></td><td  width="5px"></td>
+		<td><strong>Variations on Barb&#259;lat's Lemma</strong> </td> 
+  	  </tr>
+  <tr><td ></td><td  width="5px"></td>
+	         <td> Amer. Math. Monthly 128, no. 8, 825-830, DOI: 10.4169/amer.math.monthly.123.8.825 <a href="http://www.jstor.org/stable/10.4169/amer.math.monthly.123.8.825"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1411.1611"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+	  </tr>  
+	  
+	  	  
+		<tr height="7px"></tr>
+	  
+	  
+	     <tr><td style="text-align:right" width="40px">19.</td><td  width="5px"></td>
+	  	   <td>S.-A. Wegner (2016) </td></tr><tr><td></td><td  width="5px"></td>
+			<td><strong>The growth bound for strongly continuous semigroups on Fr&eacute;chet spaces</strong> </td> 
+	  	  </tr>
+	  <tr><td ></td><td  width="5px"></td>
+		         <td> Proc. Edinb. Math. Soc. 59, no. 3, 801-810, DOI:10.1017/S0013091515000310 <a href="http://journals.cambridge.org/download.php?file=%2FPEM%2FS0013091515000310a.pdf&code=4b0f2b8f717ca4a56798fcc5c0bfb3b2"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1408.5037"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+		  </tr>  
+	  
+	  
+		<tr height="7px"></tr>
+	  
+	 
+	  
+	  
+	     <tr><td style="text-align:right" width="40px">18.</td><td  width="5px"></td>
+	  	   <td>A. Goli&#324;ska and S.-A. Wegner (2016) </td></tr><tr><td></td><td  width="5px"></td>
+			<td><strong>Non-power bounded generators of strongly continuous semigroups</strong> </td> 
+	  	  </tr>
+	  <tr><td ></td><td  width="5px"></td>
+		         <td> J. Math. Anal. Appl. 436, no. 1, 429-438. DOI:10.1016/j.jmaa.2015.12.015 <a href="http://www.sciencedirect.com/science/article/pii/S0022247X1501121X"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1506.08451"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+		  </tr>  
+		  
+		  
+		  
+	  	<tr height="7px"></tr>  	  
+
+	
+     <tr><td style="text-align:right" width="40px">17.</td><td  width="5px"></td>
+  	   <td>B. Jacob and S.-A. Wegner (2015) </td></tr><tr><td></td><td  width="5px"></td>
+		<td><strong>Asymptotics of evolution equations beyond Banach spaces</strong> </td> 
+  	  </tr>
+  <tr><td ></td><td  width="5px"></td>
+	         <td> Semigroup Forum 91, no. 2, 347-377, DOI: 10.1007/s00233-014-9659-z <a href="http://link.springer.com/content/pdf/10.1007%2Fs00233-014-9659-z.pdf"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1410.4230"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+	  </tr>  
+  
+  	  	<tr height="7px"></tr>  	  
+
+	
+       <tr><td style="text-align:right" width="40px">16.</td><td  width="5px"></td>
+    	   <td>B. Jacob, S.-A. Wegner and J. Wintermayr (2015) </td></tr><tr><td></td><td  width="5px"></td>
+  		<td><strong>Desch-Schappacher perturbation of one-parameter semigroups on locally convex spaces</strong> </td> 
+    	  </tr>
+    <tr><td ></td><td  width="5px"></td>
+  	         <td> Math. Nachr. 288, no. 8-9, 925-934, DOI: 10.1002/mana.201400116 <a href="http://onlinelibrary.wiley.com/doi/10.1002/mana.201400116/pdf"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1409.8058"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+  	  </tr>  
+	  	  
+  	  	<tr height="7px"></tr>  	  
+
+	
+       <tr><td style="text-align:right" width="40px">15.</td><td  width="5px"></td>
+    	   <td>L. Minder, T. Sauerwald and S.-A. Wegner (2015) </td></tr><tr><td></td><td  width="5px"></td>
+  		<td><strong>Asymptotic bounds on the equilateral dimension of hypercubes</strong> </td> 
+    	  </tr>
+    <tr><td ></td><td  width="5px"></td>
+  	         <td> Graphs Combin. 31, no. 5, 1629-1636. DOI: 10.1007/s00373-014-1473-6 <a href="http://link.springer.com/article/10.1007/s00373-014-1473-6"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1408.5027"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+  	  </tr>  
+	  	  
+		  
+  	  	<tr height="7px"></tr>  	  
+
+	
+       <tr><td style="text-align:right" width="40px">14.</td><td  width="5px"></td>
+    	   <td>Ya. Kopylov and S.-A. Wegner (2014) </td></tr><tr><td></td><td  width="5px"></td>
+  		<td><strong>Exact couples in semiabelian categories revisited</strong> </td> 
+    	  </tr>
+    <tr><td ></td><td  width="5px"></td>
+  	         <td> J. Algebra 414, 264-270. DOI: 10.1016/j.jalgebra.2014.04.030 <a href="http://www.sciencedirect.com/science/article/pii/S0021869314002919"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1406.6789"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+  	  </tr>  
+	  	  
+		  
+  	  	<tr height="7px"></tr>  	  
+
+	
+       <tr><td style="text-align:right" width="40px">13.</td><td  width="5px"></td>
+    	   <td>S.-A. Wegner (2014) </td></tr><tr><td></td><td  width="5px"></td>
+  		<td><strong>Universal extrapolation spaces for C<sub>0</sub>-semigroups</strong> </td> 
+    	  </tr>
+    <tr><td ></td><td  width="5px"></td>
+  	         <td> Ann. Univ. Ferrara 60, no. 2, 447-463, DOI: 10.1007/s11565-013-0189-5 <a href="http://link.springer.com/article/10.1007/s11565-013-0189-5"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1406.6934"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+  	  </tr>  
+	  	  		  		  
+		  
+  	  	<tr height="7px"></tr>  	  
+
+	
+       <tr><td style="text-align:right" width="40px">12.</td><td  width="5px"></td>
+    	   <td>Ya. Kopylov and S.-A. Wegner (2012) </td></tr><tr><td></td><td  width="5px"></td>
+  		<td><strong>On the notion of a semi-abelian category in the sense of Palamodov</strong> </td> 
+    	  </tr>
+    <tr><td ></td><td  width="5px"></td>
+  	         <td> Appl. Categor. Struct. 20, no. 5, 531-541. DOI: 10.1007/s10485-011-9249-0 <a href="https://link.springer.com/article/10.1007/s10485-011-9249-0"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1406.6804"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+  	  </tr>  
+	  	  		  		  
+  	  	<tr height="7px"></tr>  	  
+
+	
+       <tr><td style="text-align:right" width="40px">11.</td><td  width="5px"></td>
+    	   <td>S.-A. Wegner (2012) </td></tr><tr><td></td><td  width="5px"></td>
+  		<td><strong>PLB-spaces of holomorphic functions with logarithmic growth conditions</strong> </td> 
+    	  </tr>
+    <tr><td ></td><td  width="5px"></td>
+  	         <td> Arch. Math. (Basel) 98, no. 2, 163-172, DOI: 10.1007/s00013-011-0339-x <a href="https://link.springer.com/article/10.1007/s00013-011-0339-x"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1406.6904"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+  	  </tr>  
+	  	  		  		  
+		  		  
+  	  	<tr height="7px"></tr>  	  
+
+	
+       <tr><td style="text-align:right" width="40px">10.</td><td  width="5px"></td>
+    	   <td>S.-A. Wegner (2011) </td></tr><tr><td></td><td  width="5px"></td>
+  		<td><strong>Projective limits of weighted LB-spaces of holomorphic functions</strong> </td> 
+    	  </tr>
+    <tr><td ></td><td  width="5px"></td>
+  	         <td> J. Math. Anal. Appl. 383, no. 2, 409-422. DOI: 10.1016/j.jmaa.2011.05.033 <a href="http://www.sciencedirect.com/science/article/pii/S0022247X11004781"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1406.6931"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+  	  </tr>  
+	  	  		  		  
+		  		  
+    	  	<tr height="7px"></tr>  	  
+
+	
+         <tr><td style="text-align:right" width="40px">9.</td><td  width="5px"></td>
+      	   <td>D. Sieg and S.-A. Wegner (2011) </td></tr><tr><td></td><td  width="5px"></td>
+    		<td><strong>Maximal exact structures on additive categories</strong> </td> 
+      	  </tr>
+      <tr><td ></td><td  width="5px"></td>
+    	         <td> Math. Nachr. 284, no. 16, 2093-2100, DOI: 10.1002/mana.200910154 <a href="http://onlinelibrary.wiley.com/doi/10.1002/mana.200910154/pdf"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1406.7192"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+    	  </tr>  
+	  	  		  		  
+		  		  
+	  		  
+  	  	<tr height="7px"></tr>  	  
+
+
+       <tr><td style="text-align:right" width="40px">8.</td><td  width="5px"></td>
+    	   <td>J. Bonet and S.-A. Wegner (2011) </td></tr><tr><td></td><td  width="5px"></td>
+  		<td><strong>Bornological projective limits of inductive limits of normed spaces</strong> </td> 
+    	  </tr>
+    <tr><td ></td><td  width="5px"></td>
+  	         <td>Funct. Approx. Comment. Math. 44, no. 2, 227-242, DOI: 10.7169/facm/1308749126  <a href="https://projecteuclid.org/journals/functiones-et-approximatio-commentarii-mathematici/volume-44/issue-2/Bornological-projective-limits-of-inductive-limits-of-normed-spaces/10.7169/facm/1308749126.full"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1406.7165"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+  	  </tr>  
+  	  		  		  
+	  		  
+  	 
+  	  	<tr height="7px"></tr>  	  
+
+
+       <tr><td style="text-align:right" width="40px">7.</td><td  width="5px"></td>
+    	   <td>S.-A. Wegner (2011) </td></tr><tr><td></td><td  width="5px"></td>
+  		<td><strong>Weighted PLB-spaces of continuous functions arising as tensor products of a Fr&eacute;chet and a DF-space</strong> </td> 
+    	  </tr>
+    <tr><td ></td><td  width="5px"></td>
+  	         <td>Rev. R. Acad. Cien. Serie A. Mat. 105, no. 1, 85-96, DOI: 10.1007/s13398-011-0001-2 <a href="https://link.springer.com/article/10.1007/s13398-011-0001-2"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1406.7364"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+  	  </tr>  
+	  
+<tr height="7px"></tr>  	  
+  	  		  		  
+		       <tr><td style="text-align:right" width="40px">6b.</td><td  width="5px"></td>
+		    	   <td>S. Michaelis de Vasconcellos, S. Stufler, S.-A. Wegner, P. Ester, A. Zrenner and M. Bichler (2006) </td></tr><tr><td></td><td  width="5px"></td>
+		   	<td><strong>Quantum interferences of a single quantum dot in the case of detuning (presented on the QD2006)</strong>  </td> 
+		    	  </tr>
+		    <tr><td ></td><td  width="5px"></td>
+		            <td>phys. stat. sol. (c) 3, No. 11, 3730-3733, DOI: 10.1002/pssc.200671585 <a href="http://onlinelibrary.wiley.com/doi/10.1002/pssc.200671585/abstract"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a></td> 
+		     </tr>  
+
+ 
+   	<tr height="7px"></tr>  	  
+
+
+     <tr><td style="text-align:right" width="40px">6a.</td><td  width="5px"></td>
+  	   <td>S. Michaelis de Vasconcellos, S. Stufler, S.-A. Wegner, P. Ester, A. Zrenner and M. Bichler (2006) </td></tr><tr><td></td><td  width="5px"></td>
+ 	<td><strong>Quantum interferences of a single quantum dot in the case of detuning (journal version)</strong> </td> 
+  	  </tr>
+  <tr><td ></td><td  width="5px"></td>
+          <td>Phys. Rev. B 74, 081304(R), DOI: 10.1103/PhysRevB.74.081304 <a href="http://link.aps.org/doi/10.1103/PhysRevB.74.081304"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a></td> 
+   </tr>	 
+	 	 
+	  	 
+		 	  	  	  
+   	</table>
+	
+	
+	<h3>Mathematics Education</h3>
+
+
+	<table style="width:100%">
+		
+
+	          <tr><td style="text-align:right" width="40px">5.</td><td  width="5px"></td>
+	       	   <td>C. von Renesse, S.-A. Wegner (2023) </td></tr><tr><td></td><td  width="5px"></td>
+	     		<td><strong>Two examples of ungrading in higher education in the United States and Germany</strong> </td> 
+	       	  </tr>
+	       <tr><td ></td><td  width="5px"></td>
+	     	         <td> PRIMUS 33, no. 9, 1035-1054, DOI 10.1080/10511970.2023.2229819 <a href="https://www.tandfonline.com/doi/full/10.1080/10511970.2023.2229819"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="https://arxiv.org/abs/2209.14240"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+	     	  </tr>
+
+<tr height="7px"></tr>  	  
+				  
+				  
+       <tr><td style="text-align:right" width="40px">4.</td><td  width="5px"></td>
+    	   <td>T. Pawlaschyk and S.-A. Wegner (2020) </td></tr><tr><td></td><td  width="5px"></td>
+  		<td><strong>Engaging students in conjecturing through homework in Real Analysis and Differential Equations</strong> </td> 
+    	  </tr>
+    <tr><td ></td><td  width="5px"></td>
+  	         <td>Int. J. Math. Educ. Sci. Technol. 51, no. 3, 439-450, DOI:10.1080/0020739X.2019.1656832 <a href="https://www.tandfonline.com/doi/full/10.1080/0020739X.2019.1656832"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="https://arxiv.org/abs/1707.09851"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+  	  </tr>
+	  
+
+	 
+   	<tr height="7px"></tr>  	  
+
+
+        <tr><td style="text-align:right" width="40px">3.</td><td  width="5px"></td>
+     	   <td>S. Beumann and S.-A. Wegner (2018) </td></tr><tr><td></td><td  width="5px"></td>
+   		<td><strong>An outlook on self-assessment of homework assignments in higher mathematics education</strong> </td> 
+     	  </tr>
+     <tr><td ></td><td  width="5px"></td>
+   	         <td>Int. J. STEM Edu. 5, no. 55, 1-7, DOI: 10.1186/s40594-018-0146-z <a href="https://stemeducationjournal.springeropen.com/articles/10.1186/s40594-018-0146-z"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1707.05688"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+   	  </tr>
+	 
+   	<tr height="7px"></tr>  	  
+
+
+        <tr><td style="text-align:right" width="40px">2.</td><td  width="5px"></td>
+     	   <td>K. Rolka and S.-A. Wegner (2018) </td></tr><tr><td></td><td  width="5px"></td>
+   		<td><strong>An open day in the metric space</strong> </td> 
+     	  </tr>
+     <tr><td ></td><td  width="5px"></td>
+   	         <td>Teaching Mathematics and its Applications 37, no. 3, 155-162, DOI: 10.1093/teamat/hrw025 <a href="https://academic.oup.com/teamat/article-abstract/doi/10.1093/teamat/hrw025/3920560/An-open-day-in-the-metric-space"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1603.00565"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+   	  </tr>
+	  
+   	<tr height="7px"></tr>  	  
+
+
+        <tr><td style="text-align:right" width="40px">1.</td><td  width="5px"></td>
+     	   <td>S.-A. Wegner (2014) </td></tr><tr><td></td><td  width="5px"></td>
+   		<td><strong>A workshop for high school students on naive set theory</strong> </td> 
+     	  </tr>
+     <tr><td ></td><td  width="5px"></td>
+   	         <td>Eur. J. Sci. Math. Edu. 2, no. 4, 193-201 <a href="http://scimath.net/articles/24/241.pdf"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="PDF.png" width="29" height="15" /></a><a href="http://arxiv.org/abs/1603.00571"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+   	  </tr>
+	 
+		 
+		 	  	
+	</table>
+		
+		
+<!--	
   
 
+ <h3>Lecture Notes</h3>
+
+
+  <table style="width:100%">
+
+          <tr><td style="text-align:right" width="40px">0.</td><td  width="5px"></td>
+       	   <td>S.-A. Wegner (2021) </td></tr><tr><td></td><td  width="5px"></td>
+     		<td><strong>Lecture notes on high-dimensional data</strong> </td> 
+       	  </tr>
+       <tr><td ></td><td  width="5px"></td>
+     	         <td>arXiv: 2101.05841, 57 pages <a href="https://arxiv.org/abs/2101.05841"><img style="border:0 solid;margin:.1em .2em -0.15em;" src="ARXIV.png" width="36" height="15" /></a></td> 
+     	  </tr>
+   		  		  
+
+  </table>
   
+	
+-->
+	 
 
 
+
+</p>
+
+<hr />
+
+</div>
+
+
+<div>
+	
+	<h3>Teaching</h3>
+	<ul style="margin-bottom: 1.5em;margin-top: 0em; list-style-type:square">
+		<li style="padding:0.2em 0.1em"> Mathematics I (University of Hamburg, Winter 2023)</li>
+	<li style="padding:0.2em 0.1em"> Functional Analysis (University of Hamburg, Summer 2023)</li>
+	<li style="padding:0.2em 0.1em"> Software Course (University of Hamburg, Summer 2023)</li>
+	<li style="padding:0.2em 0.1em"> Mathematical Introduction to Data Science (University of Hamburg, Winter 2022)</li>
+	<li style="padding:0.2em 0.1em"> Software Course (University of Hamburg, Summer 2022)</li>
+	<li style="padding:0.2em 0.1em"> Mathematics III (University of Hamburg, Winter 2021)</li>
+	<li style="padding:0.2em 0.1em"> Software Course (University of Hamburg, Summer 2021)</li>
+	<li style="padding:0.2em 0.1em"> Nonlinear Functional Analysis (University of Wuppertal, Summer 2021)</li>		
+	<li style="padding:0.2em 0.1em"> Mathematical Data Science (Teesside University, Fall 2020)</li>
+	<li style="padding:0.2em 0.1em"> Analysis I (Teesside University, Fall 2020)</li>		
+	<li style="padding:0.2em 0.1em"> Mathematical Modeling (Teesside University, Spring 2020)</li>
+	<li style="padding:0.2em 0.1em"> Analysis II (Teesside University, Spring 2020)</li>
+	<li style="padding:0.2em 0.1em"> Data Analysis (Teesside University, Fall 2019)</li>
+	<li style="padding:0.2em 0.1em"> Vector Analysis and Measure Theory (Teesside University, Fall 2019)</li>
+	<li style="padding:0.2em 0.1em"> Analysis I (Teesside University, Fall 2019)</li>
+
+	<li style="padding:0.2em 0.1em"> Differential Equations and Fourier Analysis (Teesside University, Spring 2019)</li>
+	<li style="padding:0.2em 0.1em"> Analysis II (Teesside University, Spring 2019)</li>
+	<li style="padding:0.2em 0.1em"> Vector Analysis and Measure Theory (Teesside University, Fall 2018)</li>
+	<li style="padding:0.2em 0.1em"> Analysis I (Teesside University, Fall 2018)</li>
+	<li style="padding:0.2em 0.1em"> Engineering Mathematics (Teesside University, Fall 2018)</li>
+
+		<li style="padding:0.2em 0.1em">Engineering Mathematics & Calculus (Teesside University, Spring 2018)</li>
+		<li style="padding:0.2em 0.1em">Calculus (Teesside University, Spring 2018)</li>
+		<li style="padding:0.2em 0.1em">Ordinary Differential Equations (University of Wuppertal, Winter 2016)</li>
+		<li style="padding:0.2em 0.1em">Discrete Mathematics (Nazarbayev University, Astana, Spring 2016)</li>
+		<li style="padding:0.2em 0.1em">Real Analysis II (Nazarbayev University, Astana, Spring 2016)</li>
+		<li style="padding:0.2em 0.1em">Real Analysis I (Nazarbayev University, Astana, Fall 2015)</li>
+		<li style="padding:0.2em 0.1em">Calculus I (Nazarbayev University, Astana, Fall 2015)</li>
+		<li style="padding:0.2em 0.1em">Introduction to Functional Analysis (University of Wuppertal, Summer 2012)</li>
+		<li style="padding:0.2em 0.1em">Operator Semigroups for Numerical Analysis (University of Wuppertal, Winter 2011)</li>
+		<li style="padding:0.2em 0.1em">Splitting Theory for PLS-spaces (University of Wuppertal, Summer 2011)</li>
+	</ul>
+
+	<h3>Blockcourses</h3>
+	<ul style="margin-bottom: 1.5em;margin-top: 0em; list-style-type:square">
+	<li style="padding:0.2em 0.1em">Introduction to Functional Analysis (Nazarbayev University, Astana, Spring 2016)</li>
+	<li style="padding:0.2em 0.1em">One Parameter Semigroups on Locally Convex Spaces (Adam Mickiewicz University, Pozna&#324;, Fall 2014)</li>
+	<li style="padding:0.2em 0.1em">Distribution Theory and Partial Differential Equations (University of Wuppertal, Summer 2012)</li>
+	</ul>
+	
+	<h3>Seminars</h3>
+	<ul style="margin-bottom: 1.5em;margin-top: 0em; list-style-type:square">
+	<li style="padding:0.2em 0.1em">Analysis of Teaching Material for Secondary School (University of Hamburg, Summer 2023)</li>
+	<li style="padding:0.2em 0.1em">Selected Topics on Analysis (University of Wuppertal, Winter 2014)</li>
+	<li style="padding:0.2em 0.1em">Semigroups on Locally Convex Spaces (University of Wuppertal, Summer 2012)</li>
+	</ul>
+
+	<hr />
+
+	
+</div>
+
+<div>
+	
+	
+	<h3>Links</h3>	
+	<ul style="margin-bottom: 1.5em;margin-top: 0em; list-style-type:square">
+		
+			<li style="padding:0.2em 0.1em">My <a href="Conf.pdf">Conference Visits and Talks</a></li>
+	
+ 
+	  
+	  
+ 
+	<li style="padding:0.2em 0.1em">My reviews on <a href="http://www.ams.org/mathscinet/search/publications.html?pg1=RVRI&s1=933890&pg3=authreviews" title="Opens external link in new window" target="_self" class="external-link-new-window" rel="noopener noreferrer">MathSciNet</a> and in <a href="https://zbmath.org/?t=&s=0&r=xx&q=rv%3Asven-ake+wegner" title="Opens external link in new window" target="_self" class="external-link-new-window" rel="noopener noreferrer">Zentralblatt</a></li>
+	
+	<li style="padding:0.2em 0.1em">My <a href="https://mathscinet.ams.org/mathscinet/MRAuthorID/933890" title="Opens external link in new window" target="_self" class="external-link-new-window" rel="noopener noreferrer">AMS Author Profile</a></li>
+	
+	
+	
+
+	<li style="padding:0.2em 0.1em">My entry in the <a href="http://genealogy.math.ndsu.nodak.edu/id.php?id=145064" title="Opens external link in new window" target="_self" class="external-link-new-window" rel="noopener noreferrer">Mathematics Genealogy Project</a></li>
+
+	<!--<li style="padding:0.2em 0.1em">My Teesside University <a href="https://research.tees.ac.uk/en/persons/sven-ake-wegner" target="_self" class="external-link-new-window" rel="noopener noreferrer">Staff Profile</a></li>-->
+	
+  <li style="padding:0.2em 0.1em">My <a href="https://www.youtube.com/@sven.wegner" title="Opens external link in new window" target="_self" class="external-link-new-window" rel="noopener noreferrer">Youtube Channel</a></li>
+  
+	
+	<li style="padding:0.2em 0.1em">My <a href="https://www.bbc.co.uk/programmes/m0009ky9">Interview with Steph McGovern</a> for BBC Radio 4 (starting at 3' 15'')</li>
+	
+	<!--<li style="padding:0.2em 0.1em">A <a href="https://vimeo.com/428455365">Video on the BSc Mathematics</a> at Teesside University</li>-->
+	
+	
+	
+	</ul>
+	
+  <hr />
+	
+</div>
+
+
+<div>
+
+    <p><h3>Posters of conferences and seminars that I co-organized</h3>
+	
+	  <table style="width:100%">
+    		<tr>
+    	    <td style="text-align:left" width="400px"><a href="Kyllburg2011.pdf"><img src="Kyllburg2011.jpg" height="193" width="141"></a>&ensp;<a href="NWDFAK2011.pdf"><img src="NWDFAK2011.jpg" height="193" width="141"></a>&ensp;<a href="Ananet2019.pdf"><img src="Ananet2019.jpg" height="193" width="141"></a>&ensp;<a href="Mathsclub2019.pdf"><img src="Mathsclub2019.jpg" height="193" width="141"></a>&ensp;<a href="Cats2021.pdf"><img src="Cats2021.jpg" height="193" width="141"></a>&ensp;<a href="BH2K2023.pdf"><img src="BH2K2023.jpg" height="193" width="141"></a></td>
+			
+			
+			
+    	  </tr>
+	</table>
+	
+		  
+	
+	</p>
+		
+  
+  <hr />
+  
+  </div>
+
+
+
+
+  <br>
+	
+	<small>Please notice that this site uses cookies. By using it you agree to their use. We take your privacy seriously
+    and are committed to protecting your personal information. If you have any questions, please 
+	contact Sven-Ake Wegner via the e-mail address provided above.</small>
+  </div>
+  
+   <br>
+   <br>
+   <br>
 
 </article>
-
-
-</div>
-
-
-
-</div>
-
 </html>
