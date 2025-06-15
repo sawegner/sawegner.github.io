@@ -51,6 +51,85 @@
   clear: both;
 }
 
+
+table {
+  width: 900px;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #154360; /* dark header blue */
+  color: white;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #D6EAF8; /* lighter blue */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #F4F6F7; /* very light gray */
+}
+
+th:first-child,
+td:first-child {
+  width: 15%;
+  text-align: center;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 25%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 60%;
+}
+
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  th {
+    position: sticky;
+    top: 0;
+    background: #154360;
+    z-index: 2;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td::before {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #555;
+  }
+
+  td:nth-of-type(1)::before { content: "Time"; }
+  td:nth-of-type(2)::before { content: "Speaker"; }
+  td:nth-of-type(3)::before { content: "Title"; }
+}
+
 </style>
 </head>
 
@@ -93,103 +172,7 @@ University of Hamburg, Geomatikum 142
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f9f9f9;
-    }
 
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    th, td {
-      border: 1px solid #ccc;
-      padding: 12px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #154360; /* dark header blue */
-      color: white;
-    }
-
-    tbody tr:nth-child(odd) {
-      background-color: #D6EAF8; /* lighter blue */
-    }
-
-    tbody tr:nth-child(even) {
-      background-color: #F4F6F7; /* very light gray */
-    }
-
-    th:first-child,
-    td:first-child {
-      width: 15%;
-      text-align: center;
-    }
-
-    th:nth-child(2),
-    td:nth-child(2) {
-      width: 25%;
-    }
-
-    th:nth-child(3),
-    td:nth-child(3) {
-      width: 60%;
-    }
-
-    @media (max-width: 600px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
-      }
-
-      th {
-        position: sticky;
-        top: 0;
-        background: #154360;
-        z-index: 2;
-      }
-
-      td {
-        border: none;
-        border-bottom: 1px solid #ddd;
-        position: relative;
-        padding-left: 50%;
-      }
-
-      td::before {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        font-weight: bold;
-        color: #555;
-      }
-
-      td:nth-of-type(1)::before { content: "Time"; }
-      td:nth-of-type(2)::before { content: "Speaker"; }
-      td:nth-of-type(3)::before { content: "Title"; }
-    }
-  </style>
-</head>
-<body>
   <table>
     <thead>
       <tr>
@@ -226,8 +209,7 @@ University of Hamburg, Geomatikum 142
       </tr>
     </tbody>
   </table>
-</body>
-</html>
+
 
 
 	  
